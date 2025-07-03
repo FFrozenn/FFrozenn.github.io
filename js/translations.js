@@ -106,7 +106,7 @@ const translations = {
         tableLikes: "Likes",
         tableDislikes: "Dislikes",
         tuanLikes: "Tomatoes, poetry",
-        tuanDislikes: "Egg yolks, Americano coffee"
+        tuanDislikes: "Egg yolks, Americano coffee",
         xiIntroTitle: "About Xi - Answer",
         xiName: "Xi",
         xiNewParagraph: "The crowd is a warm fog. I drift within it, my figure diluted and reassembled. I'm used to tailoring a fitting silhouette with a smile—perfect, and never worn out. Until a gaze from a corner, like a fine needle, pries open the fog's weave—my own transparent edges are slightly curling.",
