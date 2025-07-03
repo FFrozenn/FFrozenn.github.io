@@ -66,25 +66,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const filterContent = (filter) => {
-        const items = document.querySelectorAll('.content-item');
-        items.forEach(item => {
-            if (filter === 'all' || item.dataset.category === filter) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    };
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            const filter = button.dataset.filter;
-            filterContent(filter);
+        const filterContent = (filter) => {
+            const items = document.querySelectorAll('.content-item');
+            items.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        };
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.dataset.filter;
+                filterContent(filter);
+            });
         });
     });
 
     loadContent();
-}); 
+});

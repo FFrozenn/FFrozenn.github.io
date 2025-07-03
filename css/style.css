@@ -4,9 +4,9 @@
     --text-color: #e0e0e0;
     --accent-color: #cccccc;
     --border-color: #333333;
-    --font-main: 'Helvetica Neue', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    --font-serif: 'Times New Roman', 'Songti SC', 'SimSun', serif;
-    --font-mono: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+    --font-main: sans-serif;
+    --font-serif: sans-serif;
+    --font-mono: monospace;
 }
 
 * {
@@ -188,11 +188,34 @@ a:hover {
 
 .video-controls {
     position: absolute;
-    bottom: 100px;
+    bottom: 20px;
     right: 5%;
     display: flex;
-    gap: 10px;
+    gap: 12px;
     z-index: 101;
+}
+
+.control-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(204, 204, 204, 0.3);
+    color: var(--accent-color);
+    padding: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: rgba(204, 204, 204, 0.2);
+    transform: scale(1.05);
+    border-color: var(--accent-color);
 }
 
 .control-btn {
@@ -405,7 +428,7 @@ main {
         text-align: center;
         order: 1;
         margin-top: 20px;
-        margin-bottom: 190px;
+        margin-bottom: 150px;
     }
 
     /* 2. Video */
@@ -426,11 +449,12 @@ main {
 
     /* 3. Controls */
     .video-controls {
-        position: static;
-        order: 3;
-        width: 100%;
-        justify-content: center;
-    }
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+    order: 3;
+    justify-content: flex-end;
+}
 
     body.home {
         padding-top: 100px; /* Space for header */
