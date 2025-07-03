@@ -67,18 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
      * Updates UI text based on the current language
      */
     const updateText = () => {
-        if (typeof translations === 'undefined') {
-            console.error('Translations object not found. Make sure translations.js is loaded.');
-            return;
+        let langPack = {};
+        if (typeof translations !== 'undefined') {
+            langPack = translations[currentLang] || {};
         }
-        const langPack = translations[currentLang];
-        if (!langPack) return;
 
         document.querySelectorAll('[data-lang-key]').forEach(element => {
             const key = element.getAttribute('data-lang-key');
-            if (langPack[key]) {
-                element.textContent = langPack[key];
-            }
+            element.textContent = langPack[key] || key;
         });
         document.documentElement.lang = currentLang.startsWith('zh') ? 'zh-CN' : currentLang;
     };
@@ -147,6 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
             mainNav.classList.toggle('active');
             toggleBtn.classList.toggle('active');
         });
+
+        // Close menu when clicking nav links
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                toggleBtn.classList.remove('active');
+            });
+        });
     };
 
     /**
@@ -188,4 +192,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initVideoPlayer();
     initMobileNav();
     initFilterControls();
-}); 
+});
