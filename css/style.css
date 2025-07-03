@@ -218,21 +218,7 @@ a:hover {
     border-color: var(--accent-color);
 }
 
-.control-btn {
-    background-color: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--accent-color);
-    padding: 8px 15px;
-    font-size: 1rem;
-    cursor: pointer;
-    line-height: 1;
-    transition: background-color 0.3s, color 0.3s;
-}
 
-.control-btn:hover {
-    background-color: var(--accent-color);
-    color: var(--main-bg-color);
-}
 
 /* MAIN CONTENT PADDING */
 main {
@@ -428,7 +414,7 @@ main {
         text-align: center;
         order: 1;
         margin-top: 20px;
-        margin-bottom: 150px;
+        margin-bottom: 130px;
     }
 
     /* 2. Video */
@@ -458,33 +444,33 @@ main {
 
     body.home {
         padding-top: 100px; /* Space for header */
-    }
 
-    body.home .background-video-container {
-        position: relative;
-        width: 100%;
-        height: 0;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        z-index: 1;
-    }
+        .background-video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            z-index: 1;
+        }
 
-    body.home .background-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-    body.home .home-main {
-        height: auto;
-        padding: 20px 0;
-    }
+        .home-main {
+            height: auto;
+            padding: 20px 0;
+        }
 
-    body.home .video-controls {
-        position: static; /* No longer absolute */
-        justify-content: center;
-        width: 100%;
+        .video-controls {
+            position: static; /* No longer absolute */
+            justify-content: center;
+            width: 100%;
+        }
     }
 
     .intro-content {
@@ -495,8 +481,15 @@ main {
         grid-column: 1 / 2;
     }
     .intro-content.text-first .intro-visual {
-        order: -1;
-    }
+    order: -1;
+}
+
+/* Optimized redundant styles */
+body.home .video-controls {
+    position: static;
+    justify-content: center;
+    width: 100%;
+}
 
     .main-nav {
         display: none;
@@ -814,16 +807,18 @@ main {
     gap: 10px;
 }
 
-.filter-btn {
+.control-btn, .filter-btn {
     background: none;
     border: 1px solid var(--border-color);
     color: var(--accent-color);
     padding: 8px 15px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+    line-height: 1;
 }
 
-.filter-btn:hover,
+.control-btn:hover, .filter-btn:hover,
 .filter-btn.active {
     background-color: var(--accent-color);
     color: var(--main-bg-color);
