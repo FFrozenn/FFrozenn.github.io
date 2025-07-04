@@ -486,10 +486,10 @@ main {
 
 /* Optimized redundant styles */
 body.home .video-controls {
-    position: static;
-    justify-content: flex-end;
-    width: 100%;
-}
+        position: absolute;
+        justify-content: flex-end;
+        width: 100%;
+    }
 
     .main-nav {
         display: none;
