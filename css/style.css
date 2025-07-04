@@ -131,7 +131,7 @@ a:hover {
     .main-nav.active ul {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 20px;
         padding: 0;
         margin: 0;
     }
