@@ -128,6 +128,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updatePlayPause();
         updateMute();
+
+        // 尝试播放视频并处理错误
+        video.play().catch(error => {
+            console.log('视频播放失败:', error);
+            // 显示错误信息给用户
+            const errorElement = document.createElement('div');
+            errorElement.className = 'video-error';
+            errorElement.textContent = '视频加载失败，请刷新页面重试';
+            errorElement.style.color = 'red';
+            errorElement.style.position = 'absolute';
+            errorElement.style.top = '50%';
+            errorElement.style.left = '50%';
+            errorElement.style.transform = 'translate(-50%, -50%)';
+            video.parentNode.appendChild(errorElement);
+        });
     };
 
     /**
