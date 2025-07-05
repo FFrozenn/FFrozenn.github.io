@@ -76,6 +76,15 @@ a:hover {
     margin-left: 20px;
 }
 
+/* Desktop navigation item separator */
+@media (min-width: 769px) {
+    .main-nav li:not(:first-child) {
+        margin-left: 15px;
+        padding-left: 15px;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}
+
 .lang-switch button {
     background: none;
     border: 1px solid var(--border-color);
